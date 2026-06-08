@@ -44,7 +44,7 @@ def parse_args():
                         action=argparse.BooleanOptionalAction)
     return parser.parse_args()
 
-# Liest Konfig Datei als dict datei dann ein
+# Liest Konfig Datei als dict datei dann ein (Dict von dict Slack: Token: blabla)
 def parse_config():
     config = configparser.ConfigParser()
     config.read('mercari-scanner/config.ini')
