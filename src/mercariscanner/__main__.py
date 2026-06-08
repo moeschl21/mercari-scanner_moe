@@ -15,7 +15,7 @@ class HelpParser(argparse.ArgumentParser):
         self.print_help()
         sys.exit(2)
 
-
+# Parser für Eingaben
 def parse_args():
     parser = HelpParser()
     parser.add_argument('keyword', help='Mercari search keyword')
@@ -44,7 +44,7 @@ def parse_args():
                         action=argparse.BooleanOptionalAction)
     return parser.parse_args()
 
-
+# Liest Konfig Datei
 def parse_config():
     config = configparser.ConfigParser()
     config.read('mercari-scanner/config.ini')
