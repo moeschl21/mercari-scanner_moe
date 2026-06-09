@@ -9,7 +9,7 @@ log = logging.getLogger(__name__)
 
 class MercariSpider(scrapy.Spider):
     name = 'mercarispider'
-    base_url = 'https://www.mercari.com'
+    base_url = 'https://www.mercari.com' # Tauch gegen https://jp.mercari.com/en
     custom_settings = {
         "COOKIES_ENABLED": False
     }
@@ -40,8 +40,8 @@ class MercariSpider(scrapy.Spider):
             yield scrapy.Request(url=url, method='GET', dont_filter=True, headers=headers)
 
     def stop(self):
-        """ Gracefully stops the crawler and returns a deferred tath is fired
-        whe the crawler is stopped
+        """ Gracefully stops the crawler and returns a deferred that is fired
+        when the crawler is stopped
         """
         if self.crawling:
             self.crawling = False
